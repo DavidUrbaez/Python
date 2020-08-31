@@ -1,9 +1,9 @@
-from Fasor_Graph import vector_r_theta
+from Fasor_Graph import vector_r_theta,Vector
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('dark_background')
 
-angle_V_I = 10
+angle_V_I = -20
 Ra = 2
 Xa = 4
 
@@ -24,9 +24,9 @@ for vector_name in ['Va', 'VRA', 'VXA', 'Ea', 'Ia']:
     vector.plot()
 
 plt.xlim(-1, 15)
-plt.ylim(-1, 10)
+plt.ylim(-5, 8)
 
-# (Ia * 4j).plot()
+
 
 plt.gca().set_aspect(1)
 plt.gca().spines['right'].set_visible(False)  # se quita la linea de abajo
