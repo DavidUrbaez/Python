@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+plt.style.use('dark_background')
 
 # Funciones trigonometricas en grados (360)
 sin = lambda x: np.sin(x * np.pi / 180)
@@ -44,6 +45,12 @@ class Vector:
         resta.y = self.y - other.y
         return resta
 
+    def __mul__(self, k):
+        mul = Vector(self.xorigen, self.yorigen, self.x, self.y, self.color)
+        mul.x = ((self.x + self.y * 1j) * k).real
+        mul.y = ((self.x + self.y * 1j) * k).imag
+        return mul
+
     def plot(self):
         '''
         Se grafica el vector en cuestion
@@ -55,12 +62,15 @@ def vector_r_theta(r, theta, color='k'):
     return Vector(0, 0, x=r * cos(theta), y=r * sin(theta), color=color)
 
 
-angle = -30
+angle_V_I = 10
+Ra = 2
+Xa = 4
 
 Va = vector_r_theta(6, 0, 'r')
-Ia = vector_r_theta(2, angle, 'c')
-VRA = vector_r_theta(3, angle, 'b')
-VXA = vector_r_theta(4, angle + 90, 'k')
+Ia = vector_r_theta(2, angle_V_I, 'c')
+VRA = Ia * Ra
+VXA = Ia * Xa * 1j
+VRA.color, VXA.color = 'y', 'b'
 
 Ea = Va + VRA + VXA
 
@@ -72,9 +82,12 @@ for vector_name in ['Va', 'VRA', 'VXA', 'Ea', 'Ia']:
     plt.text(vector.xorigen + vector.x * 0.5 + 0.1, vector.yorigen + vector.y * 0.5 + 0.1, vector_name)
     vector.plot()
 
-plt.gca().set_aspect(1)
 plt.xlim(-1, 15)
-plt.ylim(-10, 10)
+plt.ylim(-1, 10)
 
-# (Ea - VXA).plot()
+# (Ia * 4j).plot()
+
+plt.gca().set_aspect(1)
+plt.gca().spines['right'].set_visible(False) #se quita la linea de abajo
+plt.gca().spines['top'].set_visible(False) #Se quita la linea de arriba
 plt.show()
