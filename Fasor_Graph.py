@@ -13,7 +13,7 @@ class Vector():
         self.color = color
         # plt.quiver(xorigen, yorigen, x, y, angles='xy', scale_units='xy', scale=1, color=self.color)
 
-    def __add__(self, other):
+    def __rshift__(self, other):
         self.xorigen = other.xorigen + other.x
         self.yorigen = other.yorigen + other.y
         return self
@@ -30,8 +30,8 @@ Va = vector_r_theta(8, 0, 'r')
 Vb = vector_r_theta(8, 120, 'b')
 Vc = vector_r_theta(8, 240, 'g')
 
-Vc = Vc + Vb
-Va = Va + Vc
+Vc >> Vb
+# Va >> Vc
 
 for vector_name in ['Va', 'Vb', 'Vc']:
     vector = eval(vector_name)
