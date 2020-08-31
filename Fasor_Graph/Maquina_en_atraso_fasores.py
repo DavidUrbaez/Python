@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('dark_background')
 
-angle_V_I = 10
-Ra = 2
-Xa = 4
+angle_V_I = -20
+Ra = 1
+Xa = 2
 
 Va = vector_r_theta(6, 0, 'r')
 Ia = vector_r_theta(2, angle_V_I, 'c')
@@ -24,7 +24,7 @@ for vector_name in ['Va', 'VRA', 'VXA', 'Ea', 'Ia']:
     vector.plot()
 
 plt.xlim(-1, 15)
-plt.ylim(-1, 10)
+plt.ylim(-5, 8)
 
 # (Ia * 4j).plot()
 
