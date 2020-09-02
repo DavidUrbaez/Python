@@ -3,12 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('dark_background')
 
-angle_V_I = -20
-Ra = 1
-Xa = 2
+angle_V_I = 80
+Ra = 0.5
+Xa = 0.5
 
-Va = vector_r_theta(6, 0, 'r')
-Ia = vector_r_theta(2, angle_V_I, 'c')
+Va = vector_r_theta(r=6, theta=0,color= 'r')
+Ia = vector_r_theta(r=2, theta=angle_V_I,color= 'c')
 VRA = Ia * Ra
 VXA = Ia * Xa * 1j
 VRA.color, VXA.color = 'y', 'b'
