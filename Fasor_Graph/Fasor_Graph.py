@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
 plt.style.use('dark_background')
 
 # Funciones trigonometricas en grados (360)
@@ -9,7 +10,7 @@ cos = lambda x: np.cos(x * np.pi / 180)
 
 # Se define la clase de Vector
 class Vector:
-    def __init__(self, z=0, color='b'):
+    def __init__(self, z=0,zorigen=0, color='b'):
         '''
         Se agregan los parametros del vector
         :param xorigen: coordenada x de la cola del vector
@@ -18,8 +19,8 @@ class Vector:
         :param y: coordenada y de la cabeza del vector
         :param color: color del vector
         '''
-        self.zorigen=0
-        self.z=z
+        self.zorigen = zorigen
+        self.z = z
         self.color = color
 
     def __rshift__(self, other):
@@ -28,27 +29,33 @@ class Vector:
         :param other: Vector nuevo de ubicación origen
         :return: Vector con origen desfasado
         '''
-        self.zorigen=other.zorigen+other.z
+        self.zorigen = other.zorigen + other.z
 
         return self
 
-    # def __add__(self, other, color='g'):
-    #     suma = Vector(self.xorigen, self.yorigen, self.x, self.y, color)
-    #     suma.x = self.x + other.x
-    #     suma.y = self.y + other.y
-    #     return suma
-    #
-    # def __sub__(self, other, color='c'):
-    #     resta = Vector(self.xorigen, self.yorigen, self.x, self.y, color)
-    #     resta.x = self.x - other.x
-    #     resta.y = self.y - other.y
-    #     return resta
-    #
-    # def __mul__(self, k):
-    #     mul = Vector(self.xorigen, self.yorigen, self.x, self.y, self.color)
-    #     mul.x = ((self.x + self.y * 1j) * k).real
-    #     mul.y = ((self.x + self.y * 1j) * k).imag
-    #     return mul
+    def __add__(self, other):
+        suma = Vector( self.z,self.zorigen)
+        suma.z += other.z
+        return suma
+
+    def __sub__(self, other, color='c'):
+        resta = Vector(self.z,self.zorigen)
+        resta.z -= other.z
+        return resta
+
+
+    def __mul__(self, other):
+        mul = Vector(self.z,self.zorigen)
+        mul.z*=other.z
+        return mul
+
+    def __truediv__(self, other):
+        div = Vector(self.z, self.zorigen)
+        div.z *= other.z
+        return div
+
+    def __repr__(self):
+        return str(self.z)
 
     def plot(self):
         '''
@@ -60,7 +67,6 @@ class Vector:
 
 
 def vector_r_theta(r, theta, color='k'):
-    return Vector(0, 0, x=r * cos(theta), y=r * sin(theta), color=color)
-
+    return Vector(z=r * np.exp(theta * 1j), color=color)
 
 
