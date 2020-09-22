@@ -22,6 +22,7 @@ class Vector:
         self.zorigen = zorigen
         self.z = z
         self.color = color
+        self.m=abs(self.z)
 
     def __rshift__(self, other):
         '''
