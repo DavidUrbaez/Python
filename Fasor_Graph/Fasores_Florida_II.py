@@ -11,7 +11,7 @@ def R2P(x):
 
 Va = Vector(13800)
 
-theta = -np.arccos(0.85)
+theta = np.arccos(0.85)
 
 S = Vector(16200 * 10 ** 3 * np.exp(theta * 1j))
 
@@ -58,3 +58,5 @@ plt.gca().set_aspect(1)
 plt.gca().spines['right'].set_visible(False)  # se quita la linea de abajo
 plt.gca().spines['top'].set_visible(False)  # Se quita la linea de arriba
 plt.show()
+
+print('Regulación: ' + str(((Ea.m - Va.m) / Va.m) * 100) + '%')
