@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('dark_background')
 
-angle_V_I = 80
+angle_V_I = 50
 Ra = 0.5
 Xa = 0.5
 

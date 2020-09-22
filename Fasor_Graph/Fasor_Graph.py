@@ -9,7 +9,7 @@ cos = lambda x: np.cos(x * np.pi / 180)
 
 # Se define la clase de Vector
 class Vector:
-    def __init__(self, xorigen, yorigen, x=None, y=None, color='k'):
+    def __init__(self, xorigen=0, yorigen=0, x=None, y=None, color='b'):
         '''
         Se agregan los parametros del vector
         :param xorigen: coordenada x de la cola del vector
