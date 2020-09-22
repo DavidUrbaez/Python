@@ -38,7 +38,7 @@ class Vector:
         suma.z += other.z
         return suma
 
-    def __sub__(self, other, color='c'):
+    def __sub__(self, other):
         resta = Vector(self.z,self.zorigen)
         resta.z -= other.z
         return resta
@@ -46,7 +46,10 @@ class Vector:
 
     def __mul__(self, other):
         mul = Vector(self.z,self.zorigen)
-        mul.z*=other.z
+        try:
+            mul.z *= other.z
+        except:
+            mul.z *= other
         return mul
 
     def __truediv__(self, other):
@@ -55,7 +58,7 @@ class Vector:
         return div
 
     def __repr__(self):
-        return str(self.z)
+        return str(self.z) +'   -   '+str(abs(self.z))+' ∠ '+str(np.angle(self.z)*180/np.pi)
 
     def plot(self):
         '''
@@ -66,7 +69,7 @@ class Vector:
                    angles='xy', scale_units='xy', scale=1, color=self.color)
 
 
-def vector_r_theta(r, theta, color='k'):
+def vector_r_theta(r, theta, color='g'):
     return Vector(z=r * np.exp(theta * 1j), color=color)
 
 
