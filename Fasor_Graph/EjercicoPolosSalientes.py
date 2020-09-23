@@ -43,7 +43,7 @@ VXq.color = 'g'
 Ea.color = 'r'
 
 VXq >> (VXd >> (VRa >> Va))
-# Ia2 = Ia * 2
+Ia2 = Ia * 2
 Ia.color = 'g'
 for vector_name in ['Va', 'VRa', 'VXd', 'VXq', 'Ea', 'Ia']:
     vector = eval(vector_name)

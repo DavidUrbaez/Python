@@ -37,11 +37,13 @@ class Vector:
     def __add__(self, other):
         suma = Vector( self.z,self.zorigen)
         suma.z += other.z
+        suma.m = abs(suma.z)
         return suma
 
     def __sub__(self, other):
         resta = Vector(self.z,self.zorigen)
         resta.z -= other.z
+        resta.m=abs(resta.z)
         return resta
 
 
@@ -51,15 +53,18 @@ class Vector:
             mul.z *= other.z
         except:
             mul.z *= other
+        mul.m=abs(mul.z)
         return mul
 
     def __truediv__(self, other):
         div = Vector(self.z, self.zorigen)
         div.z *= other.z
+        div.m=abs(div.z)
         return div
 
     def __repr__(self):
         return str(self.z) +'   -   '+str(abs(self.z))+' ∠ '+str(np.angle(self.z)*180/np.pi)
+
 
     def plot(self):
         '''

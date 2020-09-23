@@ -9,15 +9,15 @@ def R2P(x):
     return np.abs(x), np.angle(x) * 180 / np.pi, 'Grados'
 
 
-Va = Vector(13800)
+Va = Vector(13800/np.sqrt(3))
 
 theta = np.arccos(0.85)
 
 S = Vector(16200 * 10 ** 3 * np.exp(theta * 1j))
 
-Ia = Vector(np.conj(S.z / (np.sqrt(3) * Va.z)))
+Ia = Vector(np.conj(S.z / (3*Va.z)))
 
-Xbase = (abs(Va.z) ** 2) / abs(S.z)
+Xbase = (abs(13800) ** 2) / abs(S.z)
 
 Ra = 0.0517 * (120 + 234.5) / (75 + 234.5)
 
@@ -59,4 +59,4 @@ plt.gca().spines['right'].set_visible(False)  # se quita la linea de abajo
 plt.gca().spines['top'].set_visible(False)  # Se quita la linea de arriba
 plt.show()
 
-print('Regulación: ' + str(((Ea.m - Va.m) / Va.m) * 100) + '%')
+print('Regulación: ' + str(((abs(Ea.z) - Va.m) / Va.m) * 100) + '%')
