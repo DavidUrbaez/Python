@@ -11,7 +11,7 @@ def R2P(x):
 
 Va = Vector(13800)
 
-theta = np.arccos(0.8)
+theta = -np.arccos(0.8)
 
 S = Vector(70 * 10 ** 6 * np.exp(theta * 1j))
 

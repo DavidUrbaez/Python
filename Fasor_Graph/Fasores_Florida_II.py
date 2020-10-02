@@ -17,14 +17,14 @@ S = Vector(16200 * 10 ** 3 * np.exp(theta * 1j))
 
 Ia = Vector(np.conj(S.z / (3*Va.z)))
 
-Xbase = (abs(13800) ** 2) / abs(S.z)
+Xbase = (abs(13800) ** 2) / abs(14400000)
 
 Ra = 0.0517 * (120 + 234.5) / (75 + 234.5)
 
 Rf = 0.0901 * (120 + 234.5) / (75 + 234.5)
 
 Xq = Xbase * 0.678
-Xd = Xbase * 1.02
+Xd = Xbase * 1.13
 
 delta = np.arctan((Ia.m * Xq * np.cos(theta) - Ia.m * Ra * np.sin(theta)) /
                   (Va.m + Ia.m * (Ra * np.cos(theta) + Xq * np.sin(theta))))
@@ -52,7 +52,7 @@ for vector_name in ['Va', 'VRa', 'VXd', 'VXq', 'Ea', 'Ia2']:
 
 plt.xlim(-1000, 20000)
 
-plt.ylim(-1000, 6000)
+plt.ylim(-1000, 8000)
 
 plt.gca().set_aspect(1)
 plt.gca().spines['right'].set_visible(False)  # se quita la linea de abajo
