@@ -49,22 +49,22 @@ Pentrada=86.53e6
 % Taplicado 232.55K N-m
 % Delta 39.38
 
-%% Test
-clear all
-Vg=26
-Rb=0.190972222222222
-RL=4e-3
-Rf=125/3
-v=-125
-
-% D=0.994377060353364
-syms D
-Dp=1-D
-
-IL=-v/(Rf*Dp)
-
-F=Vg*D-Rb*IL*D-RL*IL+v*Dp
-solve(F==0,D)
+% %% Test
+% clear all
+% Vg=26
+% Rb=0.190972222222222
+% RL=4e-3
+% Rf=125/3
+% v=-125
+% 
+% % D=0.994377060353364
+% syms D
+% Dp=1-D
+% 
+% IL=-v/(Rf*Dp)
+% 
+% F=Vg*D-Rb*IL*D-RL*IL+v*Dp
+% solve(F==0,D)
 
 
 
