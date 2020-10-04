@@ -1,4 +1,4 @@
-from Fasor_Graph import vector_r_theta, Vector
+from Graficar_Fasores import vector_r_theta, Vector
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -11,7 +11,7 @@ def R2P(x):
 
 Va = Vector(13800/np.sqrt(3))
 
-theta = np.arccos(0.85)
+theta = np.arccos(0.9)
 
 S = Vector(45700 * 10 ** 3 * np.exp(theta * 1j))
 
