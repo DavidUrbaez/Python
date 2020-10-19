@@ -19,7 +19,7 @@ Rf = 0.05915 * (115 + 234.5) / (20 + 234.5)
 
 Xq = Xbase * 0.66
 Xd = Xbase * 1.02
-for theta in [-np.arccos(0.9),1,np.arccos(0.9)]:
+for theta in [-np.arccos(0.9),-np.arccos(1),np.arccos(0.9)]:
 
     Va_final=[]
     Ia_final=np.arange(0,1750,10)
@@ -46,9 +46,9 @@ for theta in [-np.arccos(0.9),1,np.arccos(0.9)]:
         Va_final.append(Va.m)
 
     plt.plot(Ia_final,np.array(Va_final))
-plt.text(700, 3000, 'Fp=0.9 Atraso', fontsize=12,color='c')
-plt.text(1000, 6000, 'Fp=1', fontsize=12,color='c')
-plt.text(1000, 8000, 'Fp=0.9 Adelanto', fontsize=12,color='c')
+plt.text(700, 3000, 'Fp=0.9 Atraso', fontsize=12)
+plt.text(1000, 6000, 'Fp=1', fontsize=12)
+plt.text(1000, 8000, 'Fp=0.9 Adelanto', fontsize=12)
 plt.ylim(0,10000)
 plt.xlabel('Ia [A]')
 plt.ylabel('Va [V]')
