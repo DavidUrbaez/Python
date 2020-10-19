@@ -46,9 +46,9 @@ for theta in [-np.arccos(0.9),1,np.arccos(0.9)]:
         Va_final.append(Va.m)
 
     plt.plot(Ia_final,np.array(Va_final))
-plt.text(1000, 3000, 'Fp=0.9 atraso', fontsize=12,c='c')
-plt.text(750, 6000, 'Fp=1', fontsize=12,c='c')
-plt.text(1000, 8000, 'Fp=0.9 adelanto', fontsize=12,c='c')
+plt.text(700, 3000, 'Fp=0.9 Atraso', fontsize=12,color='c')
+plt.text(1000, 6000, 'Fp=1', fontsize=12,color='c')
+plt.text(1000, 8000, 'Fp=0.9 Adelanto', fontsize=12,color='c')
 plt.ylim(0,10000)
 plt.xlabel('Ia [A]')
 plt.ylabel('Va [V]')
