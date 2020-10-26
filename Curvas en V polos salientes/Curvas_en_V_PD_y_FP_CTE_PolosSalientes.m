@@ -93,5 +93,5 @@ for theta=  [-acos(0.25) -acos(0.5) -acos(0.75) -acos(0.9) acos(1) acos(0.9) aco
     plot(Ea_mag,Ia_mag)
 end
 set(gca,'ydir','normal');  %%http://www.peteryu.ca/tutorials/matlab/plot_over_image_background
-xlabel('I_{FD} [A]')
-ylabel('I_{A} [A]')
+xlabel('I_{FD} [p.u.]')
+ylabel('I_{A} [p.u.]')
