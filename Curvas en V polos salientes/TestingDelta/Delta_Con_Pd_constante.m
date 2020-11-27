@@ -54,7 +54,7 @@ end
 
 
 %%
-xlabel('Ea [p.u.]')
+xlabel('I_{FD} [p.u.]')
 ylabel('delta [ ºGrados ]')
 
 legend('P_n = 0.00 [p.u]','P_n = 0.25 [p.u]','P_n = 0.50 [p.u]','P_n = 0.75 [p.u]','P_n = 1.00 [p.u]')

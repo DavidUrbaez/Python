@@ -1,5 +1,5 @@
 import numpy as np
-
+a="hola"
 def CaracteristicasMaquina(S=36,q=3,P=4,Nc=10,phi=50*10**-3,f=60,a=1):
     #a: caminos de corriente
 
